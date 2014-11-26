@@ -27,5 +27,11 @@ class ProductSpec extends ObjectBehavior
         $this->setPrice(300);
         $this->getPrice()->shouldBe(300);
     }
+
+    function it_should_allow_a_discount()
+    {
+        $this->setDiscountInPercentage(20);
+        $this->getPrice()->shouldBe(80);
+    }
 }
 
