@@ -23,4 +23,17 @@ class CalcSpec extends ObjectBehavior
 
         $this->getPrice(5)->shouldReturn(500);
     }
+
+    function it_should_allow_a_value_discount()
+    {
+        $this->setDiscountInPercentage(20);
+    }
+
+    function it_should_expose_a_discounted_price(Product $product)
+    {
+        $this->setDiscountInPercentage(20);
+        $product->getPrice()->willReturn(100);
+
+        $this->getPrice(20)->shouldReturn(1600);
+    }
 }

@@ -14,6 +14,7 @@ $tax = new Tax($product);
 $product->setPrice($tax->getTotalPrice());
 
 $calc = new Calc($product);
+$calc->setDiscountInPercentage(20);
 
 $view = new View();
 
