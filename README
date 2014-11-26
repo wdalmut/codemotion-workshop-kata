@@ -1,9 +1,13 @@
-prezzo fisso
-prezzo variable
-quantity variabile
-tassa solo italia
-sconto manuale
-sconto fascia (<1000 > 1000)
-tasse in francia
+1) prezzo fisso
+2) prezzo variable
+3) quantity variabile
+4) tassa solo italia
+5) sconto manuale
+6) sconto fascia (<1000 > 1000)
+7) tasse in francia [not implemented]
+
+-- Notes
+
+point 4 introduces a design problem (tag 0.0.1) -> refactored in 0.0.2
 
 
