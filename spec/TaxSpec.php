@@ -4,13 +4,13 @@ namespace spec;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Product;
+use Calc;
 
 class TaxSpec extends ObjectBehavior
 {
-    function let(Product $product)
+    function let(Calc $calc)
     {
-        $this->beConstructedWith($product);
+        $this->beConstructedWith($calc);
     }
 
     function it_is_initializable()
@@ -18,9 +18,9 @@ class TaxSpec extends ObjectBehavior
         $this->shouldHaveType('Tax');
     }
 
-    function it_should_apply_taxes(Product $product)
+    function it_should_apply_taxes(Calc $calc)
     {
-        $product->getPrice()->willReturn(100);
+        $calc->getPrice()->willReturn(100);
 
         $this->getTotalPrice()->shouldBe(100*1.22);
     }

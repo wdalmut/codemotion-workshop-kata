@@ -10,13 +10,13 @@ $discount = $argv[3];
 $product = new Product($price);
 $product->setDiscountInPercentage($discount);
 
-$tax = new Tax($product);
-$product->setPrice($tax->getTotalPrice());
-
 $calc = new Calc($product);
 $calc->setDiscountInPercentage(20);
+$calc->setQuantity($quantity);
+
+$tax = new Tax($calc);
 
 $view = new View();
 
-echo "Il prodotto costa € " . $view->format($calc->getPrice($quantity)) . PHP_EOL;
+echo "Il prodotto costa € " . $view->format($tax->getTotalPrice()) . PHP_EOL;
 

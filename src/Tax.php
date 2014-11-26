@@ -2,13 +2,13 @@
 
 class Tax
 {
-    public function __construct($product)
+    public function __construct($calc)
     {
-        $this->product = $product;
+        $this->calc = $calc;
     }
 
     public function getTotalPrice()
     {
-        return $this->product->getPrice() * 1.22;
+        return $this->calc->getPrice() * 1.22;
     }
 }
