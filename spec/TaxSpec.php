@@ -24,4 +24,12 @@ class TaxSpec extends ObjectBehavior
 
         $this->getTotalPrice()->shouldBe(100*1.22);
     }
+
+    function it_should_apply_fr_taxes(Calc $calc)
+    {
+        $calc->getPrice()->willReturn(100);
+
+        $this->setCountry("fr");
+        $this->getTotalPrice()->shouldBe(100*1.20);
+    }
 }
